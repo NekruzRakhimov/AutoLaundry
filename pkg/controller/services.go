@@ -12,6 +12,9 @@ func GetAllService(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"reason": "ошибка при получении списка сервисов"})
 	}
 
+	if err != nil {
+		return
+	}
 	c.JSON(http.StatusOK, s)
 }
 
