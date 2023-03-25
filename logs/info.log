@@ -1,0 +1,205 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :5555
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :5555
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 02:10:30 | 404 |       112.5µs |             ::1 | GET      "/ping"
+[GIN] 2023/03/25 - 02:10:36 | 200 |     712.708µs |             ::1 | GET      "/"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 03:18:39 | 200 |   37.673291ms |             ::1 | GET      "/services"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 03:20:30 | 200 |   48.928625ms |             ::1 | GET      "/services"
+[GIN] 2023/03/25 - 03:20:46 | 200 |    1.690375ms |             ::1 | GET      "/services"
+[GIN] 2023/03/25 - 03:20:57 | 200 |     1.89025ms |             ::1 | GET      "/services"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 03:21:58 | 200 |    16.08525ms |             ::1 | GET      "/services"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/details   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServiceDetails (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 12:55:49 | 200 |   36.378875ms |             ::1 | GET      "/services"
+[GIN] 2023/03/25 - 12:55:55 | 200 |       7.653ms |             ::1 | GET      "/services/DRY_CLEANING/details"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/details   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServiceDetails (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 12:57:54 | 200 |   23.383459ms |             ::1 | GET      "/services"
+[GIN] 2023/03/25 - 12:57:54 | 200 |     823.542µs |             ::1 | GET      "/services"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/pricing   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServicePricing (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 500 with 200
+[GIN] 2023/03/25 - 13:20:21 | 500 |   32.311959ms |             ::1 | GET      "/services/DRY_CLEANING/pricing"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/pricing   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServicePricing (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 13:21:19 | 200 |   23.686458ms |             ::1 | GET      "/services/DRY_CLEANING/pricing"
+[GIN] 2023/03/25 - 14:36:59 | 200 |  143.490417ms |             ::1 | GET      "/services"
+[GIN] 2023/03/25 - 14:37:08 | 200 |    4.407292ms |             ::1 | GET      "/services/DRY_CLEANING/pricing"
+[GIN] 2023/03/25 - 14:37:25 | 200 |     326.292µs |             ::1 | GET      "/services/HAND_WASH/pricing"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/pricing   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServicePricing (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 14:39:56 | 200 |    28.40475ms |             ::1 | GET      "/services/HAND_WASH/pricing"
+[GIN] 2023/03/25 - 14:41:00 | 200 |     818.583µs |             ::1 | GET      "/"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/pricing   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServicePricing (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 14:43:01 | 200 |      32.374ms |             ::1 | GET      "/services/GENERAL_LAUNDRY_SERVICES/pricing"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/pricing   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServicePricing (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 14:45:59 | 200 |   38.789334ms |             ::1 | GET      "/services/IRONING_SERVICES/pricing"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/pricing   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServicePricing (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 14:48:38 | 200 |   47.412084ms |             ::1 | GET      "/services/CLOTHING_REPAIR/pricing"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/pricing   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServicePricing (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/25 - 14:51:05 | 200 |   30.136333ms |             ::1 | GET      "/services/STAIN_REMOVAL/pricing"
