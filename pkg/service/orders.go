@@ -1,15 +1,25 @@
 package service
 
 import (
+	"github.com/NekruzRakhimov/AutoLaundery/db"
 	"github.com/NekruzRakhimov/AutoLaundery/logger"
 	"github.com/NekruzRakhimov/AutoLaundery/models"
 	"github.com/NekruzRakhimov/AutoLaundery/pkg/repository"
 )
 
 func MakeOrder(order models.Order) (id int, err error) {
+	trx := db.GetDBConn().Begin()
+	if err = repository.SaveOrder(trx, &order); err != nil {
+		return 0, err
+	}
+
 	if order.DryCleaning != nil {
 		totalAmount, err := CalculateDryCleaningOrder(order.DryCleaning)
 		if err != nil {
+			return 0, err
+		}
+
+		if err = repository.SaveDryCleaningOrder(trx, order.ID, order.DryCleaning); err != nil {
 			return 0, err
 		}
 
@@ -23,6 +33,10 @@ func MakeOrder(order models.Order) (id int, err error) {
 			return 0, err
 		}
 
+		if err = repository.SaveHandWashOrder(trx, order.ID, order.HandWash); err != nil {
+			return 0, err
+		}
+
 		logger.Debug.Println("HandWash: ", totalAmount)
 		order.TotalAmount += totalAmount
 	}
@@ -30,6 +44,10 @@ func MakeOrder(order models.Order) (id int, err error) {
 	if order.GeneralLaundryService != nil {
 		totalAmount, err := CalculateGeneralLaundryServiceOrder(order.GeneralLaundryService)
 		if err != nil {
+			return 0, err
+		}
+
+		if err = repository.SaveGeneralLaundryServiceOrder(trx, order.ID, order.GeneralLaundryService); err != nil {
 			return 0, err
 		}
 
@@ -43,6 +61,10 @@ func MakeOrder(order models.Order) (id int, err error) {
 			return 0, err
 		}
 
+		if err = repository.SaveIroningServicesOrder(trx, order.ID, order.IroningServices); err != nil {
+			return 0, err
+		}
+
 		logger.Debug.Println("IroningServices: ", totalAmount)
 		order.TotalAmount += totalAmount
 	}
@@ -50,6 +72,10 @@ func MakeOrder(order models.Order) (id int, err error) {
 	if order.ClothingRepair != nil {
 		totalAmount, err := CalculateClothingRepairOrder(order.ClothingRepair)
 		if err != nil {
+			return 0, err
+		}
+
+		if err = repository.SaveClothingRepairOrder(trx, order.ID, order.ClothingRepair); err != nil {
 			return 0, err
 		}
 
@@ -63,86 +89,26 @@ func MakeOrder(order models.Order) (id int, err error) {
 			return 0, err
 		}
 
+		if err = repository.SaveStainRemovalOrder(trx, order.ID, order.StainRemoval); err != nil {
+			return 0, err
+		}
+
 		logger.Debug.Println("StainRemoval: ", totalAmount)
 		order.TotalAmount += totalAmount
 	}
+	if err = repository.UpdateOrder(trx, &order); err != nil {
+		return 0, err
+	}
+	trx.Commit()
 
 	logger.Debug.Printf("%#v", order.TotalAmount)
-	return 0, err
+	return order.ID, nil
 }
 
-func CalculateDryCleaningOrder(order *[]models.DryCleaningOrder) (totalAmount float32, err error) {
-	for i, cleaningOrder := range *order {
-		p, err := repository.GetDryCleaningProductByID(cleaningOrder.ProductID)
-		if err != nil {
-			return 0, err
-		}
-
-		(*order)[i].Price = p.Price
-		totalAmount += p.Price * float32(cleaningOrder.Quantity)
-	}
-
-	return
+func GetAllOrders() (orders []models.Order, err error) {
+	return repository.GetAllOrders()
 }
 
-func CalculateHandWashOrder(order *models.HandWashOrder) (totalAmount float32, err error) {
-	s, err := repository.GetServiceByCode(models.HandWashCode)
-	if err != nil {
-		return 0, err
-	}
-
-	totalAmount += s.Price * float32(order.Quantity)
-	return
-}
-
-func CalculateGeneralLaundryServiceOrder(order *[]models.GeneralLaundryServiceOrder) (totalAmount float32, err error) {
-	for i, cleaningOrder := range *order {
-		p, err := repository.GetGeneralLaundryServiceProductByID(cleaningOrder.ProductTypeID)
-		if err != nil {
-			return 0, err
-		}
-
-		(*order)[i].Price = p.Price
-		totalAmount += p.Price * cleaningOrder.Weight
-	}
-
-	return
-}
-
-func CalculateIroningServicesOrder(order *[]models.IroningServicesOrder) (totalAmount float32, err error) {
-	for i, cleaningOrder := range *order {
-		p, err := repository.GetIroningServicesProductByID(cleaningOrder.ProductID)
-		if err != nil {
-			return 0, err
-		}
-
-		(*order)[i].Price = p.Price
-		totalAmount += p.Price * float32(cleaningOrder.Quantity)
-	}
-
-	return
-}
-
-func CalculateClothingRepairOrder(order *models.ClothingRepairOrder) (totalAmount float32, err error) {
-	s, err := repository.GetServiceByCode(models.ClothingRepairCode)
-	if err != nil {
-		return 0, err
-	}
-
-	totalAmount += s.Price * float32(order.Quantity)
-	return
-}
-
-func CalculateStainRemovalOrder(order *[]models.StainRemovalOrder) (totalAmount float32, err error) {
-	for i, cleaningOrder := range *order {
-		p, err := repository.GetStainRemovalProductByID(cleaningOrder.TypeID)
-		if err != nil {
-			return 0, err
-		}
-
-		(*order)[i].Price = p.Price
-		totalAmount += p.Price * float32(cleaningOrder.Quantity)
-	}
-
-	return
+func GetOrderByID(id int) (order models.Order, err error) {
+	return repository.GetOrderByID(id)
 }

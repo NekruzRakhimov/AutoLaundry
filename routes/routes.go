@@ -42,5 +42,7 @@ func initAllRoutes(r *gin.Engine) {
 	r.GET("/services/:code/pricing", controller.GetServicePricing)
 
 	r.POST("/order", controller.MakeOrder)
+	r.GET("/order", controller.GetAllOrders)
+	r.GET("/order/:id/details", controller.GetOrderByID)
 
 }

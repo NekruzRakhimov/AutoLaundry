@@ -10,10 +10,6 @@ func GetAllServices() (s []models.Service, err error) {
 	return repository.GetAllServices()
 }
 
-func GetServiceByCode(code string) (s models.Service, err error) {
-	return repository.GetServiceByCode(code)
-}
-
 func GetServicePricing(code string) (sp []models.ServicePricing, err error) {
 	switch code {
 	case models.DryCleaningCode:
