@@ -30,16 +30,16 @@ func GetServiceByCode(code string) (s models.Service, err error) {
 func GetDryCleaningPricing() (sp []models.ServicePricing, err error) {
 	if err = db.GetDBConn().Table("dry_cleaning_pricing").
 		Joins("join products on products.id = dry_cleaning_pricing.product_id").
-		Select("products.name, dry_cleaning_pricing.price").Scan(&sp).Error; err != nil {
+		Select("products.id, products.name, dry_cleaning_pricing.price").Scan(&sp).Error; err != nil {
 		return nil, err
 	}
 
 	return
 }
 
-func GetGeneralLaundryService() (sp []models.ServicePricing, err error) {
+func GetGeneralLaundryServicePricing() (sp []models.ServicePricing, err error) {
 	if err = db.GetDBConn().Table("general_laundry_pricing").
-		Select("name, price").Scan(&sp).Error; err != nil {
+		Select("id, name, price").Scan(&sp).Error; err != nil {
 		return nil, err
 	}
 	return
@@ -48,7 +48,7 @@ func GetGeneralLaundryService() (sp []models.ServicePricing, err error) {
 func GetIroningServicesPricing() (sp []models.ServicePricing, err error) {
 	if err = db.GetDBConn().Table("ironing_service_pricing").
 		Joins("join products on products.id = ironing_service_pricing.product_id").
-		Select("products.name, ironing_service_pricing.price").Scan(&sp).Error; err != nil {
+		Select("products.id, products.name, ironing_service_pricing.price").Scan(&sp).Error; err != nil {
 		return nil, err
 	}
 
@@ -57,7 +57,7 @@ func GetIroningServicesPricing() (sp []models.ServicePricing, err error) {
 
 func GetStainRemovalPricing() (sp []models.ServicePricing, err error) {
 	if err = db.GetDBConn().Table("stain_removal_pricing").
-		Select("name, price").Scan(&sp).Error; err != nil {
+		Select("id, name, price").Scan(&sp).Error; err != nil {
 		return nil, err
 	}
 	return

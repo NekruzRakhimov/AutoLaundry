@@ -1,12 +1,12 @@
 package models
 
 const (
-	DryCleaning           = "DRY_CLEANING"
-	HandWash              = "HAND_WASH"
-	GeneralLaundryService = "GENERAL_LAUNDRY_SERVICES"
-	IroningServices       = "IRONING_SERVICES"
-	ClothingRepair        = "CLOTHING_REPAIR"
-	StainRemoval          = "STAIN_REMOVAL"
+	DryCleaningCode           = "DRY_CLEANING"
+	HandWashCode              = "HAND_WASH"
+	GeneralLaundryServiceCode = "GENERAL_LAUNDRY_SERVICES"
+	IroningServicesCode       = "IRONING_SERVICES"
+	ClothingRepairCode        = "CLOTHING_REPAIR"
+	StainRemovalCode          = "STAIN_REMOVAL"
 )
 
 type Service struct {
@@ -20,6 +20,7 @@ type Service struct {
 }
 
 type ServicePricing struct {
+	ID    int     `json:"id"`
 	Name  string  `json:"name"`
 	Price float32 `json:"price"`
 }

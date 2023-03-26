@@ -10,11 +10,9 @@ func GetAllService(c *gin.Context) {
 	s, err := service.GetAllServices()
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"reason": "ошибка при получении списка сервисов"})
-	}
-
-	if err != nil {
 		return
 	}
+
 	c.JSON(http.StatusOK, s)
 }
 
@@ -24,6 +22,7 @@ func GetServicePricing(c *gin.Context) {
 	sp, err := service.GetServicePricing(code)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"reason": "ошибка при получении списка сервисов"})
+		return
 	}
 
 	c.JSON(http.StatusOK, sp)
