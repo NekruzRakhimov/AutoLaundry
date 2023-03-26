@@ -27,3 +27,23 @@ func GetServicePricing(c *gin.Context) {
 
 	c.JSON(http.StatusOK, sp)
 }
+
+func GetAllDiscounts(c *gin.Context) {
+	d, err := service.GetAllDiscounts()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"reason": "ошибка при получении списка скидок"})
+		return
+	}
+
+	c.JSON(http.StatusOK, d)
+}
+
+func GetAllMarkUps(c *gin.Context) {
+	d, err := service.GetAllMarkUps()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"reason": "ошибка при получении списка наценок"})
+		return
+	}
+
+	c.JSON(http.StatusOK, d)
+}

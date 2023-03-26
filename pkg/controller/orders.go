@@ -17,14 +17,15 @@ func MakeOrder(c *gin.Context) {
 		return
 	}
 
-	id, err := service.MakeOrder(order)
+	id, totalAmount, err := service.MakeOrder(order)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"reason": "что-то пошло не так"})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"id": id,
+		"order_id":     id,
+		"total_amount": totalAmount,
 	})
 }
 

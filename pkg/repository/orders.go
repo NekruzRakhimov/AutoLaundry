@@ -19,7 +19,8 @@ func SaveOrder(trx *gorm.DB, order *models.Order) error {
 }
 
 func UpdateOrder(trx *gorm.DB, order *models.Order) error {
-	if err := trx.Table("orders").Select("total_amount").Save(order).Error; err != nil {
+	if err := trx.Table("orders").Select("total_amount", "discount_ids", "mark_up_ids").
+		Save(order).Error; err != nil {
 		trx.Rollback()
 		logger.Error.Printf("[%] Error is: %s", utils.FuncName(), err.Error())
 		return err

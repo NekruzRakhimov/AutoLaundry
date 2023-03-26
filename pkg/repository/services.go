@@ -27,38 +27,42 @@ func GetServiceByCode(code string) (s models.Service, err error) {
 	return
 }
 
-func GetDryCleaningPricing() (sp []models.ServicePricing, err error) {
-	if err = db.GetDBConn().Table("dry_cleaning_pricing").
-		Joins("join products on products.id = dry_cleaning_pricing.product_id").
-		Select("products.id, products.name, dry_cleaning_pricing.price").Scan(&sp).Error; err != nil {
+func GetAllDiscounts() (d []models.Discount, err error) {
+	if err = db.GetDBConn().Table("discounts").Where("is_removed = false").Order("id").
+		Scan(&d).Error; err != nil {
+		logger.Error.Printf("[%] Error is: %s", utils.FuncName(), err.Error())
 		return nil, err
 	}
 
 	return
 }
 
-func GetGeneralLaundryServicePricing() (sp []models.ServicePricing, err error) {
-	if err = db.GetDBConn().Table("general_laundry_pricing").
-		Select("id, name, price").Scan(&sp).Error; err != nil {
-		return nil, err
-	}
-	return
-}
-
-func GetIroningServicesPricing() (sp []models.ServicePricing, err error) {
-	if err = db.GetDBConn().Table("ironing_service_pricing").
-		Joins("join products on products.id = ironing_service_pricing.product_id").
-		Select("products.id, products.name, ironing_service_pricing.price").Scan(&sp).Error; err != nil {
+func GetAllMarkUps() (d []models.MarkUp, err error) {
+	if err = db.GetDBConn().Table("additional_markups").Where("is_removed = false").Order("id").
+		Scan(&d).Error; err != nil {
+		logger.Error.Printf("[%] Error is: %s", utils.FuncName(), err.Error())
 		return nil, err
 	}
 
 	return
 }
 
-func GetStainRemovalPricing() (sp []models.ServicePricing, err error) {
-	if err = db.GetDBConn().Table("stain_removal_pricing").
-		Select("id, name, price").Scan(&sp).Error; err != nil {
-		return nil, err
+func GetDiscountByID(id int) (d models.Discount, err error) {
+	if err = db.GetDBConn().Table("discounts").Where("id = ?", id).
+		Scan(&d).Error; err != nil {
+		logger.Error.Printf("[%] Error is: %s", utils.FuncName(), err.Error())
+		return models.Discount{}, err
 	}
+
+	return
+}
+
+func GetMarkUpByIDs(id int) (d models.Discount, err error) {
+	if err = db.GetDBConn().Table("additional_markups").Where("id = ?", id).
+		Scan(&d).Error; err != nil {
+		logger.Error.Printf("[%] Error is: %s", utils.FuncName(), err.Error())
+		return models.Discount{}, err
+	}
+
 	return
 }
