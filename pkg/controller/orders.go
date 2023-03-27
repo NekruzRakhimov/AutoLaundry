@@ -10,6 +10,17 @@ import (
 	"strconv"
 )
 
+// MakeOrder AutoLaundry godoc
+// @Summary AutoLaundry
+// @Description Создание заказа
+// @Accept json
+// @Produce json
+// @Tags orders
+// @Param order body models.Order true "Информация о заказе"
+// @Success 200 {object} models.Order
+// @Failure 400,404 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Router /order [post]
 func MakeOrder(c *gin.Context) {
 	var order models.Order
 	if err := c.BindJSON(&order); err != nil {
@@ -23,12 +34,23 @@ func MakeOrder(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"order_id":     id,
-		"total_amount": totalAmount,
+	c.JSON(http.StatusOK, models.Order{
+		ID:          id,
+		TotalAmount: totalAmount,
 	})
 }
 
+// GetAllOrders AutoLaundry godoc
+// @Summary AutoLaundry
+// @Description Получение списка заказов
+// @Accept json
+// @Produce json
+// @Tags orders
+// @Param date query string false "Дата заказа в формате YYYY-MM-DD"
+// @Success 200 {array} models.Order
+// @Failure 400,404 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Router /order [get]
 func GetAllOrders(c *gin.Context) {
 	date := c.Query("date")
 
@@ -49,6 +71,17 @@ func GetAllOrders(c *gin.Context) {
 	c.JSON(http.StatusOK, o)
 }
 
+// GetOrderByID AutoLaundry godoc
+// @Summary AutoLaundry
+// @Description Получение детально информации о заказе по ID
+// @Accept json
+// @Produce json
+// @Tags orders
+// @Param id path int true "id заказа"
+// @Success 200 {object} models.Order
+// @Failure 400,404 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Router /order/{id}/details [get]
 func GetOrderByID(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {

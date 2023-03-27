@@ -1,0 +1,576 @@
+basePath: /
+definitions:
+  models.ClothingRepairOrder:
+    properties:
+      discount_ids:
+        items:
+          type: integer
+        type: array
+      discounts:
+        items:
+          $ref: '#/definitions/models.Discount'
+        type: array
+      id:
+        type: integer
+      mark_up_ids:
+        items:
+          type: integer
+        type: array
+      mark_ups:
+        items:
+          $ref: '#/definitions/models.MarkUp'
+        type: array
+      order_id:
+        type: integer
+      price:
+        type: number
+      quantity:
+        type: integer
+      total_amount:
+        type: number
+    type: object
+  models.Discount:
+    properties:
+      description:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      percent:
+        type: number
+    type: object
+  models.DryCleaningOrder:
+    properties:
+      discount_ids:
+        items:
+          type: integer
+        type: array
+      discounts:
+        items:
+          $ref: '#/definitions/models.Discount'
+        type: array
+      id:
+        type: integer
+      mark_up_ids:
+        items:
+          type: integer
+        type: array
+      mark_ups:
+        items:
+          $ref: '#/definitions/models.MarkUp'
+        type: array
+      order_id:
+        type: integer
+      price:
+        type: number
+      product_id:
+        type: integer
+      product_name:
+        type: string
+      quantity:
+        type: integer
+      total_amount:
+        type: number
+    type: object
+  models.GeneralLaundryServiceOrder:
+    properties:
+      discount_ids:
+        items:
+          type: integer
+        type: array
+      discounts:
+        items:
+          $ref: '#/definitions/models.Discount'
+        type: array
+      id:
+        type: integer
+      mark_up_ids:
+        items:
+          type: integer
+        type: array
+      mark_ups:
+        items:
+          $ref: '#/definitions/models.MarkUp'
+        type: array
+      order_id:
+        type: integer
+      price:
+        type: number
+      product_type_id:
+        type: integer
+      product_type_name:
+        type: string
+      total_amount:
+        type: number
+      weight:
+        type: number
+    type: object
+  models.HandWashOrder:
+    properties:
+      discount_ids:
+        items:
+          type: integer
+        type: array
+      discounts:
+        items:
+          $ref: '#/definitions/models.Discount'
+        type: array
+      id:
+        type: integer
+      mark_up_ids:
+        items:
+          type: integer
+        type: array
+      mark_ups:
+        items:
+          $ref: '#/definitions/models.MarkUp'
+        type: array
+      order_id:
+        type: integer
+      price:
+        type: number
+      quantity:
+        type: integer
+      total_amount:
+        type: number
+    type: object
+  models.IroningServicesOrder:
+    properties:
+      discount_ids:
+        items:
+          type: integer
+        type: array
+      discounts:
+        items:
+          $ref: '#/definitions/models.Discount'
+        type: array
+      id:
+        type: integer
+      mark_up_ids:
+        items:
+          type: integer
+        type: array
+      mark_ups:
+        items:
+          $ref: '#/definitions/models.MarkUp'
+        type: array
+      order_id:
+        type: integer
+      price:
+        type: number
+      product_id:
+        type: integer
+      product_name:
+        type: string
+      quantity:
+        type: integer
+      total_amount:
+        type: number
+    type: object
+  models.MarkUp:
+    properties:
+      description:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      percent:
+        type: number
+    type: object
+  models.Order:
+    properties:
+      clothing_repair:
+        $ref: '#/definitions/models.ClothingRepairOrder'
+      discount_ids:
+        items:
+          type: integer
+        type: array
+      discounts:
+        items:
+          $ref: '#/definitions/models.Discount'
+        type: array
+      dry_cleaning:
+        items:
+          $ref: '#/definitions/models.DryCleaningOrder'
+        type: array
+      general_laundry_service:
+        items:
+          $ref: '#/definitions/models.GeneralLaundryServiceOrder'
+        type: array
+      hand_wash:
+        $ref: '#/definitions/models.HandWashOrder'
+      id:
+        type: integer
+      ironing_services:
+        items:
+          $ref: '#/definitions/models.IroningServicesOrder'
+        type: array
+      mark_up_ids:
+        items:
+          type: integer
+        type: array
+      mark_ups:
+        items:
+          $ref: '#/definitions/models.MarkUp'
+        type: array
+      stain_removal:
+        items:
+          $ref: '#/definitions/models.StainRemovalOrder'
+        type: array
+      total_amount:
+        type: number
+    type: object
+  models.PingPong:
+    properties:
+      ping:
+        type: string
+    type: object
+  models.Service:
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      has_universal_price:
+        type: boolean
+      id:
+        type: integer
+      name:
+        type: string
+      universal_price_title:
+        type: string
+    type: object
+  models.ServicePricing:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      price:
+        type: number
+    type: object
+  models.StainRemovalOrder:
+    properties:
+      discount_ids:
+        items:
+          type: integer
+        type: array
+      discounts:
+        items:
+          $ref: '#/definitions/models.Discount'
+        type: array
+      id:
+        type: integer
+      mark_up_ids:
+        items:
+          type: integer
+        type: array
+      mark_ups:
+        items:
+          $ref: '#/definitions/models.MarkUp'
+        type: array
+      order_id:
+        type: integer
+      price:
+        type: number
+      quantity:
+        type: integer
+      total_amount:
+        type: number
+      type_id:
+        type: integer
+      type_name:
+        type: string
+    type: object
+host: localhost:8181
+info:
+  contact:
+    email: nekruzrakhimov@icloud.com
+    name: API Support
+    url: http://www.swagger.io/support
+  description: Сервис для автоматизации работы химчистки.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Gin Swagger AutoLaundry Api
+  version: "1.0"
+paths:
+  /:
+    get:
+      consumes:
+      - application/json
+      description: Роут для проверки работы сервера
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PingPong'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: AutoLaundry
+      tags:
+      - base
+  /discounts:
+    get:
+      consumes:
+      - application/json
+      description: Роут для получения списка скидок
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Discount'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: AutoLaundry
+      tags:
+      - additional
+  /mark_ups:
+    get:
+      consumes:
+      - application/json
+      description: Роут для получения списка наценок
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.MarkUp'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: AutoLaundry
+      tags:
+      - additional
+  /order:
+    get:
+      consumes:
+      - application/json
+      description: Получение списка заказов
+      parameters:
+      - description: Дата заказа в формате YYYY-MM-DD
+        in: query
+        name: date
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Order'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: AutoLaundry
+      tags:
+      - orders
+    post:
+      consumes:
+      - application/json
+      description: Создание заказа
+      parameters:
+      - description: Информация о заказе
+        in: body
+        name: order
+        required: true
+        schema:
+          $ref: '#/definitions/models.Order'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Order'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: AutoLaundry
+      tags:
+      - orders
+  /order/{id}/details:
+    get:
+      consumes:
+      - application/json
+      description: Получение детально информации о заказе по ID
+      parameters:
+      - description: id заказа
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Order'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: AutoLaundry
+      tags:
+      - orders
+  /services:
+    get:
+      consumes:
+      - application/json
+      description: Роут для получения списка сервисов
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Service'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: AutoLaundry
+      tags:
+      - services
+  /services/{code}/pricing:
+    get:
+      consumes:
+      - application/json
+      description: Роут для получения информации о расценке каждого сервиса по коду
+      parameters:
+      - description: Код сервиса
+        in: path
+        name: code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.ServicePricing'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: AutoLaundry
+      tags:
+      - services
+schemes:
+- http
+swagger: "2.0"

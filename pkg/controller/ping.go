@@ -6,12 +6,12 @@ import (
 	"net/http"
 )
 
-// PingPong unconvicted godoc
-// @Summary unconvicted
+// PingPong AutoLaundry godoc
+// @Summary AutoLaundry
 // @Description Роут для проверки работы сервера
 // @Accept  json
 // @Produce  json
-// @Tags url
+// @Tags base
 // @Success 200 {object} models.PingPong
 // @Failure 400,404 {object} map[string]interface{}
 // @Failure 500 {object} map[string]interface{}
