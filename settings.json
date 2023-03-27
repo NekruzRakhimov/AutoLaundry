@@ -6,10 +6,10 @@
     "log_file": "./logs/gin.log"
   },
   "postgres_params": {
-    "server": "localhost",
-    "port": "5433",
-    "user": "postgres",
-    "password": "admin",
-    "database": "auto_laundry_db"
+    "server": "trumpet.db.elephantsql.com",
+    "port": "5432",
+    "user": "ckmteuje",
+    "password": "5A7eFNl0KN57pHkMEThPmzzfqLk3LnnY",
+    "database": "ckmteuje"
   }
 }

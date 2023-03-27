@@ -1530,3 +1530,55 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2023/03/27 - 06:54:11 | 200 |    3.306416ms |             ::1 | GET      "/swagger/doc.json"
 [GIN] 2023/03/27 - 06:54:11 | 200 |     207.375µs |             ::1 | GET      "/swagger/favicon-16x16.png"
 [GIN] 2023/03/27 - 06:54:31 | 200 |  187.341916ms |             ::1 | POST     "/order"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/pricing   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServicePricing (5 handlers)
+[GIN-debug] POST   /order                    --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.MakeOrder (5 handlers)
+[GIN-debug] GET    /order                    --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllOrders (5 handlers)
+[GIN-debug] GET    /order/:id/details        --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetOrderByID (5 handlers)
+[GIN-debug] GET    /discounts                --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllDiscounts (5 handlers)
+[GIN-debug] GET    /mark_ups                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllMarkUps (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/27 - 07:51:52 | 200 |  322.906708ms |             ::1 | GET      "/services"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.PingPong (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (5 handlers)
+[GIN-debug] GET    /services                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllService (5 handlers)
+[GIN-debug] GET    /services/:code/pricing   --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetServicePricing (5 handlers)
+[GIN-debug] POST   /order                    --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.MakeOrder (5 handlers)
+[GIN-debug] GET    /order                    --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllOrders (5 handlers)
+[GIN-debug] GET    /order/:id/details        --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetOrderByID (5 handlers)
+[GIN-debug] GET    /discounts                --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllDiscounts (5 handlers)
+[GIN-debug] GET    /mark_ups                 --> github.com/NekruzRakhimov/AutoLaundery/pkg/controller.GetAllMarkUps (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8181
+[GIN] 2023/03/27 - 07:59:27 | 200 |  592.107208ms |             ::1 | GET      "/services"
+[GIN] 2023/03/27 - 07:59:36 | 200 |  344.037833ms |             ::1 | GET      "/services/STAIN_REMOVAL/pricing"
+[GIN] 2023/03/27 - 07:59:49 | 200 |     9.815553s |             ::1 | POST     "/order"
+[GIN] 2023/03/27 - 08:00:43 | 200 |  4.703512875s |             ::1 | POST     "/order"
+[GIN] 2023/03/27 - 08:01:24 | 200 |  4.599747542s |             ::1 | POST     "/order"
+[GIN] 2023/03/27 - 08:01:45 | 200 |  3.823190167s |             ::1 | POST     "/order"
+[GIN] 2023/03/27 - 08:01:54 | 200 |  3.923305834s |             ::1 | POST     "/order"
+[GIN] 2023/03/27 - 08:02:07 | 200 |  3.273848958s |             ::1 | POST     "/order"
+[GIN] 2023/03/27 - 08:02:31 | 200 |  3.135932333s |             ::1 | POST     "/order"
+[GIN] 2023/03/27 - 08:03:21 | 200 |  3.099284083s |             ::1 | POST     "/order"
+[GIN] 2023/03/27 - 08:03:24 | 200 |  362.114458ms |             ::1 | GET      "/order?date=2023-03-26"
+[GIN] 2023/03/27 - 08:03:27 | 200 |     369.926ms |             ::1 | GET      "/order?date=2023-03-27"
+[GIN] 2023/03/27 - 08:03:44 | 200 |  6.237182167s |             ::1 | GET      "/order/1/details"
+[GIN] 2023/03/27 - 08:03:51 | 200 |  330.155584ms |             ::1 | GET      "/discounts"
+[GIN] 2023/03/27 - 08:03:55 | 200 |  390.019458ms |             ::1 | GET      "/mark_ups"
