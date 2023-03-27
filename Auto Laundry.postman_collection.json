@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "cfcfdb2f-cb7c-4184-9ad0-f802d39c595d",
+		"name": "Auto Laundry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24537152"
+	},
+	"item": [
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8181/",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка всех сервисов",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8181/services",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Цена на услуги",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8181/services/:code/pricing",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"services",
+						":code",
+						"pricing"
+					],
+					"variable": [
+						{
+							"key": "code",
+							"value": "STAIN_REMOVAL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание заказа",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dry_cleaning\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 2\n        }\n    ],\n    \"hand_wash\": {\n        \"quantity\": 5\n    },\n    \"general_laundry_service\": [\n        {\n            \"product_type_id\": 1,\n            \"weight\": 2\n        }\n    ],\n    \"ironing_services\": [\n        {\n            \"product_id\": 7,\n            \"quantity\": 2,\n            \"mark_up_ids\": [\n                1\n            ]\n        }\n    ],\n    \"clothing_repair\": {\n        \"quantity\": 5\n    },\n    \"stain_removal\": [\n        {\n            \"type_id\": 2,\n            \"quantity\": 5\n        }\n    ],\n    \"discount_ids\": [\n        1,\n        2\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8181/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка всех заказов",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dry_cleaning\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 2\n        },\n        {\n            \"product_id\": 3,\n            \"quantity\": 3\n        }\n    ],\n    \"hand_wash\": {\n        \"quantity\": 5\n    },\n    \"general_laundry_service\": [\n        {\n            \"product_type_id\": 1,\n            \"weight\": 2\n        },\n        {\n            \"product_type_id\": 2,\n            \"weight\": 3\n        }\n    ],\n    \"ironing_services\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 2\n        }\n    ],\n    \"clothing_repair\": {\n        \"quantity\": 5\n    },\n    \"stain_removal\": [\n        {\n            \"type_id\": 2,\n            \"quantity\": 5\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8181/order?date=2023-03-27",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"order"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2023-03-27"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " Получение деталей заказа ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8181/order/:id/details",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"order",
+						":id",
+						"details"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Список скидок",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8181/discounts",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"discounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка наценок",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8181/mark_ups",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"mark_ups"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
