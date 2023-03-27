@@ -30,7 +30,17 @@ func MakeOrder(c *gin.Context) {
 }
 
 func GetAllOrders(c *gin.Context) {
-	o, err := service.GetAllOrders()
+	date := c.Query("date")
+
+	if date != "" {
+		if err := utils.ValidateDateFormat(date); err != nil {
+			logger.Error.Printf("[%] Error is: %s", utils.FuncName(), "error while parsing 'date' query param")
+			c.JSON(http.StatusBadRequest, gin.H{"reason": "дата должна быть в формате: 'YYYY-MM-DD'"})
+			return
+		}
+	}
+
+	o, err := service.GetAllOrders(date)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"reason": "что-то пошло не так"})
 		return

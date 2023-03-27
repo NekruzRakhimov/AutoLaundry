@@ -9,7 +9,7 @@ func GetAllMarkUps() (d []models.MarkUp, err error) {
 	return repository.GetAllMarkUps()
 }
 
-func GetBulkMarkUpsByIDs(ids []int) (discounts []models.Discount, err error) {
+func GetBulkMarkUpsByIDs(ids []int) (discounts []models.MarkUp, err error) {
 	for _, id := range ids {
 		discount, err := repository.GetMarkUpByIDs(id)
 		if err != nil {
@@ -22,9 +22,9 @@ func GetBulkMarkUpsByIDs(ids []int) (discounts []models.Discount, err error) {
 	return
 }
 
-func GetTotalMarkUpPercent(discounts []models.Discount) (totalDiscount float32) {
-	for _, discount := range discounts {
-		totalDiscount += discount.Percent
+func GetTotalMarkUpPercent(markUps []models.MarkUp) (totalDiscount float32) {
+	for _, markUp := range markUps {
+		totalDiscount += markUp.Percent
 	}
 
 	if totalDiscount > 100 {
@@ -35,12 +35,12 @@ func GetTotalMarkUpPercent(discounts []models.Discount) (totalDiscount float32) 
 }
 
 func GetTotalMarkUpAmount(ids []int, amount float32) (markUpAmount float32, err error) {
-	discounts, err := GetBulkMarkUpsByIDs(ids)
+	markUps, err := GetBulkMarkUpsByIDs(ids)
 	if err != nil {
 		return 0, err
 	}
 
-	totalMarkUpPercent := GetTotalMarkUpPercent(discounts)
+	totalMarkUpPercent := GetTotalMarkUpPercent(markUps)
 	markUpAmount = amount * (totalMarkUpPercent / 100)
 	return
 }

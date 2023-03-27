@@ -1,6 +1,7 @@
 package service
 
 import (
+	"github.com/NekruzRakhimov/AutoLaundery/logger"
 	"github.com/NekruzRakhimov/AutoLaundery/models"
 	"github.com/NekruzRakhimov/AutoLaundery/pkg/repository"
 )
@@ -18,6 +19,8 @@ func GetBulkDiscountsByIDs(ids []int) (discounts []models.Discount, err error) {
 
 		discounts = append(discounts, discount)
 	}
+
+	logger.Debug.Println(discounts)
 
 	return
 }

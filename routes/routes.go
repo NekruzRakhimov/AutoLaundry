@@ -15,7 +15,7 @@ func RunAllRoutes() {
 
 	//r.Use(cors.Default())
 
-	r.Use(controller.CORSMiddleware())
+	//r.Use(controller.CORSMiddleware())
 
 	// Статус код 500, при любых panic()
 	r.Use(gin.Recovery())

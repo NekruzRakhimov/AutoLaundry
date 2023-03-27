@@ -57,11 +57,11 @@ func GetDiscountByID(id int) (d models.Discount, err error) {
 	return
 }
 
-func GetMarkUpByIDs(id int) (d models.Discount, err error) {
+func GetMarkUpByIDs(id int) (d models.MarkUp, err error) {
 	if err = db.GetDBConn().Table("additional_markups").Where("id = ?", id).
 		Scan(&d).Error; err != nil {
 		logger.Error.Printf("[%] Error is: %s", utils.FuncName(), err.Error())
-		return models.Discount{}, err
+		return models.MarkUp{}, err
 	}
 
 	return
